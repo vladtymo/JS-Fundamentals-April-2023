@@ -50,3 +50,14 @@ switch (weekday) {
     default:
         console.warn("Invalid weekday number!");
 }
+
+// example with string type
+let mark = 'Excellent';
+
+switch (mark.toLowerCase()) {
+    case 'bad': break;
+    case 'good': break;
+    case 'excellent': break;
+    default:
+        break;
+}
