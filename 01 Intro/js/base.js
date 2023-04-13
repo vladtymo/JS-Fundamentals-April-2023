@@ -31,7 +31,7 @@ alert("Hello JavaScript!");
 let username = prompt("Enter your username:");
 console.log(`Hello, dear ${username}!`);
 
-// operator + for converting string to number: +{string value}
+// +{string value} - converting string to number
 let year = +prompt("Enter current year:");
 console.log(`Next year will be ${+year + 1}`);
 
