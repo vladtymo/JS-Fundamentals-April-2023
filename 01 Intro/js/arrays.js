@@ -12,7 +12,7 @@ console.log("Array values: " + array);
 
 // -------- create array using []
 var array = []; // empty array
-var array = [4, 6, 123, 1, 604, -4, 0, 123, 44];
+var array = [4, 6, 123, 1, 604, -4, 0, 123, 44]; // 9
 
 console.log("Array: " + array);
 console.log("Last item: " + array[array.length - 1]);
@@ -61,6 +61,8 @@ array = [4, 6, 8, 1, 13, 16, -4, 0, 99];
 
 const filtered = array.filter((el) => el % 2 == 0); // filter element by the condition
 console.log("Filtered array:", filtered);
+
+console.log("Reversed: ", array.reverse());
 
 const colors = ['red', 'brown', 'green', 'gold', 'silver'];
 
