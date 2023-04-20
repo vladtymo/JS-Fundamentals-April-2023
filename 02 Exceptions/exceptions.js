@@ -36,7 +36,7 @@ function removeItem(array, index) {
     array.splice(index, 1);
 }
 
-const colors = ['red', 'yellow', 'orange', 'green', 'gray', 'black'];
+const colors = ['red', 'yellow', 'orange', 'green', 'gray', 'black', 'blue'];
 
 try {
     console.log("Colors:", colors);
@@ -70,3 +70,25 @@ try {
     // executes both when the code runs successfully or if an error occurs
     console.log("Disconnect from the database!");
 }
+
+// ----------------- exception rethrowing
+function removeMiddle(array) {
+
+    try {
+        removeItem(array, array.length / 2); // RangeError
+        array.saveToDatabase();              // TypeError
+    } catch (error) {
+        if (error instanceof RangeError)
+            console.log("Operation could not be completed!");
+        else
+            throw error; // rethrow
+    }
+}
+
+try {
+    removeMiddle(colors);
+} catch (error) {
+    console.log("Error:", error.message);
+}
+
+console.log("After removing mid:", colors);
