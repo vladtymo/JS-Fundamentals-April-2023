@@ -33,6 +33,7 @@ function removeItem(array, index) {
     if (index >= array.length || index < 0)
         throw new RangeError(`Index is out of range [${0}...${array.length - 1}]`);
 
+    // after throwing an exception function is stops
     array.splice(index, 1);
 }
 
