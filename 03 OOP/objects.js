@@ -46,7 +46,7 @@ me.fullName = "Vlad Tymoshchuk";       // we cannot use spaces
 me.salary = 1400.50;
 
 // delete property
-//delete me.address;
+delete me.address;
 
 // check if object has property by name
 if (me.hasOwnProperty("salary"))
@@ -55,9 +55,9 @@ else
     console.warn("User has not a salary!");
 
 // get all object properties
-// for (const key in me) {
-//     console.log(`[${key}]: ${me[key]}`);
-// }
+for (const key in me) {
+    console.log(`[${key}]: ${me[key]}`);
+}
 
 function showUserObject(user) {
     console.log(`User [${user.username}]: ${user.email}, status: ${user.isAdmin ? 'Admin' : 'User'}`);
