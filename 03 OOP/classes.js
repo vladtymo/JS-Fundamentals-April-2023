@@ -4,6 +4,8 @@
 class Car {
     // private fileds (can access only inside this class): #name
     #speed;
+    // static - create once, it's common for all Car instances
+    static count = 0; // count of Car instance
 
     // initialize the object with initial values
     constructor(model, color, power, year) {
@@ -13,10 +15,20 @@ class Car {
         this.power = power;
         this.year = year;
         this.#speed = 0;
+        // add new instance
+        ++Car.count;
     }
     // methods
     show() {
         document.write(`<p>Car: ${this.model} ${this.color} ${this.power}hp</p>`);
+    }
+
+    static getCount() {
+        // cannot use this in the static methods
+        return Car.count;
+    }
+    static paint(car, color) {
+        car.color = color;
     }
 
     // getter / setter
@@ -36,6 +48,8 @@ class Car {
         else console.warn("Invalid speed!");
     }
 }
+
+console.log("Car instances:", Car.getCount());
 
 // create instance: new Type(params);
 let hisCar = new Car("Audi A8", "Red", 240, 2012); // invoke constructors
@@ -82,3 +96,8 @@ class PoliceCar extends Car {
 const policeCar = new PoliceCar('Toyota Prius', 'White', 145, 2016, 5);
 policeCar.beep();
 policeCar.show();
+
+console.log("Car instances:", Car.count);
+
+Car.paint(hisCar, "yellow");
+hisCar.show();
