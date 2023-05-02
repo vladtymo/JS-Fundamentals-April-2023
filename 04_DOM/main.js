@@ -1,5 +1,5 @@
 // ------------ working with HTML document ------------
-
+debugger;
 // ------- find elements
 document.body; // body tag element
 document.documentElement; // html tag element
