@@ -14,7 +14,37 @@
         are used by string-searching algorithms for "find" or "find and replace" operations on strings, or for input
         validation.</p>
 
-    <script src="./main.js"></script>
+    <!-- <script src="./main.js"></script> -->
+    <script>
+        // ------------ Memory Management ------------
+        let title = document.querySelector('h1');
+        title.remove();
+
+        // remove title? - No
+
+        let number = 10; // memory allocation
+        let c = number;
+
+        // memory usage...
+        number = Math.pow(number, 2);
+
+        // clear resources
+        // GC - Garbage Collector
+
+        if (number > 10) {
+            let msg = "Greather than 10";
+            console.log(msg);
+        }
+
+        //console.log(msg); cannot access msg
+        // remove "Greather than 10"? - Yes
+
+        number = null;
+        // remove 10? - Yes
+
+        console.log(number);
+
+    </script>
 </body>
 
 </html>
