@@ -1,0 +1,1 @@
+File content which written by using Node.js fs module!
