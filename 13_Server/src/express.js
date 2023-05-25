@@ -1,6 +1,7 @@
 // server logic
 
 const fs = require('fs');
+const cors = require('cors');
 const express = require('express'),
     app = express();
 
@@ -8,6 +9,9 @@ const hostname = 'localhost';
 const port = 3600;
 
 // create endpoint - method to handle client request
+app.use(cors({
+    origin: '*'
+}));
 
 // GET: ~/api/users
 app.get("/api/users?", (req, res) => {
@@ -15,7 +19,7 @@ app.get("/api/users?", (req, res) => {
     // get user from file
     fs.readFile("users.json", 'UTF-8', (err, data) => {
         if (err)
-            res.status(500).type('text').send(err.message);
+            res.status(500).json({ error: err.message })
         else {
             res.status(200).json(JSON.parse(data));
         }
