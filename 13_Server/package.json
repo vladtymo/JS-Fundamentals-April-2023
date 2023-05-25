@@ -1,4 +1,21 @@
 {
+  "name": "node-js-server",
+  "version": "1.0.0",
+  "description": "This is a sample server on Node.js and Express framework.",
+  "main": "express.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "api",
+    "server",
+    "express"
+  ],
+  "author": "Vlad Tymoshchuk",
+  "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
     "nodemon": "^2.0.22"

@@ -1,5 +1,6 @@
 // server logic
 
+const fs = require('fs');
 const express = require('express'),
     app = express();
 
@@ -10,7 +11,15 @@ const port = 3600;
 
 // GET: ~/api/users
 app.get("/api/users?", (req, res) => {
-    res.status(200).type('text').send("List of users!");
+
+    // get user from file
+    fs.readFile("users.json", 'UTF-8', (err, data) => {
+        if (err)
+            res.status(500).type('text').send(err.message);
+        else {
+            res.status(200).json(JSON.parse(data));
+        }
+    });
 });
 // GET: ~/api/contacts
 app.get("/api/contacts", (req, res) => {
